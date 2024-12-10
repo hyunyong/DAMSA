@@ -1,0 +1,7 @@
+/random/setSeeds 1 2 3 4 5 6 7 13214321 13214321 432143214 14313124 4321432143 43214231
+/run/numberOfThreads 10
+/run/initialize
+/analysis/setFileName eBeam
+/gun/particle e-
+/gun/energy 300 MeV
+/run/beamOn 10000
