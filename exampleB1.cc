@@ -41,6 +41,7 @@
 #include "QBBC.hh"
 #include "FTFP_BERT.hh"
 #include "QGSP_BERT.hh"
+#include "FTFP_BERT_HP.hh"
 #include "G4VisExecutive.hh"
 #include "G4UIExecutive.hh"
 
@@ -74,10 +75,10 @@ int main(int argc,char** argv)
   runManager->SetUserInitialization(new B1DetectorConstruction());
 
   // Physics list
-  G4VModularPhysicsList* phys = new QGSP_BERT;
   //G4VModularPhysicsList* phys = new B1PhysicsList();
   //phys->SetVerboseLevel(1);
-  runManager->SetUserInitialization(phys);
+  //runManager->SetUserInitialization(phys);
+  runManager->SetUserInitialization(new FTFP_BERT_HP());
 
     
   // User action initialization
