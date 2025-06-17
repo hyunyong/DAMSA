@@ -69,12 +69,12 @@ for r in range(1000):
     while True:
         Egamma = random.randint(2,11) #GeV
         Vz = random.randint(-30,-1)
-        Ea = Egamma - ma
+        Ea = Egamma
         p_lab = math.sqrt(Ea**2 - ma**2)
         px = p_lab * math.sin(theta) * math.cos(phi)
         py = p_lab * math.sin(theta) * math.sin(phi)
         pz = p_lab * math.cos(theta)
-        mother_lab = ROOT.TLorentzVector(px, py, pz, Egamma)
+        mother_lab = ROOT.TLorentzVector(px, py, pz, Ea)
         masses = array('d', [0.0, 0.0])
         decay = ROOT.TGenPhaseSpace()
         success = decay.SetDecay(mother_lab, 2, masses)
